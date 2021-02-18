@@ -162,7 +162,6 @@ minetest.register_node("travelnet:elevator", {
     on_place = function(itemstack, placer, pointed_thing)
        local pos  = pointed_thing.above;
        local node = minetest.get_node({x=pos.x, y=pos.y+1, z=pos.z});
-	   local def = minetest.registered_nodes[node.name]
        -- leftover elevator_top nodes can be removed by placing a new elevator underneath
        local def = minetest.registered_nodes[node.name]
        if (not def or not def.buildable_to) and node.name ~= "travelnet:hidden_top" then
